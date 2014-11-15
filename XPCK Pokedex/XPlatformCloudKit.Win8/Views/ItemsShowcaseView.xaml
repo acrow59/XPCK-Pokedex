@@ -99,14 +99,15 @@
                         <DataTemplate>
                             <Grid Height="250" Width="250">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="45"/> 
+                                    <RowDefinition Height="55"/> 
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock
-                                Margin="6,0,12,0"
+                                HorizontalAlignment="Center"
                                 Text="{Binding Group.Key}"
                                 TextTrimming="WordEllipsis"
-                                FontSize="24"
+                                Foreground="WhiteSmoke"
+                                FontSize="22"
                                 Style="{StaticResource BasicTextStyle}"/>
                                 <Image Source="{Binding Group[0].Image}" Grid.Row="1" />
                             </Grid>
@@ -157,7 +158,7 @@
                                 <DataTemplate>
                                     <Grid Margin="1,0,0,6">
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding Key}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" />
+                                            <TextBlock Text="{Binding Key}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Foreground="WhiteSmoke" FontSize="22" />
                                                 <TextBlock Text="{StaticResource ChevronGlyph}" Visibility="Collapsed" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource GroupHeaderTextStyle}"/>
                                             </StackPanel>
                                     </Grid>

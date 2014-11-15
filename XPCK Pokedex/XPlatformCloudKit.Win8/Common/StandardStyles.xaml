@@ -33,7 +33,7 @@
     <!--<SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#FFFFFF"/>-->
 
     <!-- App Title & Groups-->
-    <!--<SolidColorBrush x:Key="ApplicationForegroundThemeBrush" Color="Aquamarine"/>-->
+    <SolidColorBrush x:Key="ApplicationForegroundThemeBrush" Color="Gold"/>
 
     <!-- ItemsShowcaseView GridViewItem Titles -->
     <!--<SolidColorBrush x:Key="ListViewItemOverlayForegroundThemeBrush" Color="#FF991100"/>-->
@@ -90,8 +90,8 @@
 
     <Style x:Key="BasicTextStyle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource ApplicationForegroundThemeBrush}"/>
-        <Setter Property="FontSize" Value="{StaticResource ControlContentThemeFontSize}"/>
-        <Setter Property="FontFamily" Value="{StaticResource ContentControlThemeFontFamily}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="/Fonts/Pokemon Solid.ttf#Pokemon Solid"/>
         <Setter Property="TextTrimming" Value="WordEllipsis"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Typography.StylisticSet20" Value="True"/>
@@ -1673,11 +1673,14 @@
     <!-- Grid-appropriate 250 pixel square item template as seen in the GroupedItemsPage and ItemsPage -->
     <DataTemplate x:Key="Standard250x250ItemTemplate">
         <Grid HorizontalAlignment="Left" Width="250" Height="250">
-            <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+            <Border>
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Logo.png"/>
+                </Border.Background>
                 <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
             </Border>
-            <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                <TextBlock Text="{Binding Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="60" Margin="15,0,15,0"/>
+            <StackPanel VerticalAlignment="Bottom" Background="Black" Opacity=".8">
+                <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextStyle}" Foreground="White" Height="20" Margin="15,5,15,0"/>
                 <TextBlock Text="{Binding Subtitle}" Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" Margin="15,0,15,10"/>
             </StackPanel>
         </Grid>

@@ -89,12 +89,12 @@ namespace XPlatformCloudKit
         //Applies to Windows 8.0 app only
         public static readonly string[] GroupsToDisplayInFullScreenWindows8 = 
         {
-            "Youtube Playlist Example","Youtube query example"
+            
         };
 
         //Determines whether to use the Light theme (white background / black text) over the default Dark theme
         //(black background / white text)
-        public static bool UseLightThemeForWindows8X = true;
+        public static bool UseLightThemeForWindows8X = false;
         //To change specifics value of the chosen theme, i.e. Font Color throughout the Windows 8.0 application
         //Open XPlatformCloudKit.Win8/Common/StandardStyles.xaml and look for the <!-- Theme Overrides --> Section
         //Uncomment the portion(s) of the theme you wish to override
@@ -149,7 +149,7 @@ namespace XPlatformCloudKit
 
         //Determines Font color of WebView Control used to display Description in ItemDescriptionView.xaml.cs
         //Set to "Auto" to determine based on theme background or override using hex color string i.e. "#FFFFFF" for white, "#000000" for black
-        public static string FontColorOfDescription = "Auto";
+        public static string FontColorOfDescription = "#000000";
 
 
         //Determines whether hyperlinks can be clicked in ItemDescriptionView.xaml for both Windows 8 and Windows Phone 8 projects

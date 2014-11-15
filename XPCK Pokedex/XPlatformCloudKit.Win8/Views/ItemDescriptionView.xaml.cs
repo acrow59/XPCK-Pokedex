@@ -108,8 +108,7 @@ namespace XPlatformCloudKit.Views
         {
             browser = sender as WebView;
 
-            if (AppSettings.GroupsToDisplayInFullScreenWindows8.Contains(AppState.SelectedGroup.Key))
-                MaximizeWebView();
+            MaximizeWebView();
 
             flipView.SelectionChanged += flipView_SelectionChanged;
             LoadWebContent();

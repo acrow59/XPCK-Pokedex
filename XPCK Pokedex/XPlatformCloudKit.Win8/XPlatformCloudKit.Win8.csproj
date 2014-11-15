@@ -145,6 +145,8 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <PRIResource Include="en-US\Resources.resw" />
+    <Content Include="Fonts\Pokemon Hollow.ttf" />
+    <Content Include="Fonts\Pokemon Solid.ttf" />
     <None Include="Microsoft.Advertising.WinRT.UI\Microsoft.Advertising.WinRT.UI.winmd" />
     <None Include="Microsoft.Advertising.WinRT.UI\MicrosoftAdvertising.winmd" />
     <None Include="lib\NotificationsExtensions.winmd" />

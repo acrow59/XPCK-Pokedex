@@ -48,6 +48,9 @@ namespace PokemonParser
 
                     var trs = from tr in table.Descendants("tr") select tr;
 
+
+                    string prevpoke = "";
+                    int pokeForm = 0;
                     foreach (var tr in trs)
                     {
                         var tds = from td in tr.Descendants("td") select td;
@@ -64,6 +67,9 @@ namespace PokemonParser
                             if (count == 3)
                             {
                                 title = td.InnerText.Replace("\n", "").Trim();
+                                if (subtitle == prevpoke) pokeForm++;
+                                else pokeForm = 0;
+                                prevpoke = subtitle;
                                 Console.Write("Name: " + td.InnerText);
 
                                 //Pulls data from Bulbapedia.
@@ -104,18 +110,28 @@ namespace PokemonParser
                                     {
                                         //Gets Base Stats
                                         //Since some Pokemon have different forms, the webpage is setup differently preventing a top-down approach. Instead, the code starts inside the table and works its way out.
-                                        var baseID = PokeDoc.DocumentNode.SelectSingleNode("//a[@title='Stats']");
-                                        var statsTable = baseID.ParentNode;
+                                        var baseID = PokeDoc.DocumentNode.SelectSingleNode("//span[@id='Stats']").ParentNode;
+                                        var statsTable = baseID.NextSibling;
                                         while (statsTable.Name != "table")
                                         {
-                                            if (statsTable.ParentNode == null)
+                                            if (statsTable.NextSibling == null)
                                                 break;
-                                            statsTable = statsTable.ParentNode;
+
+                                            statsTable = statsTable.NextSibling;
+
+                                            try
+                                            {
+                                                if (statsTable.HasAttributes && statsTable.Attributes["class"].Value == "collapsible")
+                                                {
+                                                    statsTable = statsTable.SelectNodes("//table[@align='left']")[pokeForm];
+                                                }
+                                            }
+                                            catch { }
                                         }
                                         statsTable.Attributes["align"].Value = "center";
                                         description += statsTable.OuterHtml;
                                     }
-                                    catch
+                                    catch (Exception e)
                                     {
                                         errors += title + ":base stats, ";
                                     }
@@ -123,14 +139,22 @@ namespace PokemonParser
                                     try
                                     {
                                         //Gets Move Learnset
-                                        var learnset = PokeDoc.DocumentNode.SelectSingleNode("//span[@id='Learnset']");
-
-                                        var learnsetTable = learnset.ParentNode.NextSibling;
-                                        while (learnsetTable.Name != "table")
+                                        var multiforms = PokeDoc.DocumentNode.SelectNodes("//table[@class='collapsible']//table[@class='roundy']");
+                                        var learnset = PokeDoc.DocumentNode.SelectSingleNode("//span[@id='Learnset']").ParentNode;
+                                        var learnsetTable = learnset.NextSibling;
+                                        if (multiforms == null)
                                         {
-                                            if (learnsetTable.NextSibling == null)
-                                                break;
-                                            learnsetTable = learnsetTable.NextSibling;
+                                            while (learnsetTable.Name != "table")
+                                            {
+                                                if (learnsetTable.NextSibling == null)
+                                                    break;
+                                                learnsetTable = learnsetTable.NextSibling;
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            learnsetTable = multiforms[pokeForm*2];
                                         }
                                         learnsetTable.Attributes["style"].Value = learnsetTable.Attributes["style"].Value + " margin-top: 15px;";
                                         description += learnsetTable.OuterHtml;
@@ -143,7 +167,7 @@ namespace PokemonParser
                                     }
                                     try
                                     {
-                                        var img = roundy.SelectSingleNode("//img[contains(@alt,'" + title + "')]");
+                                        var img = roundy.SelectNodes("//table[@class='roundy']//img[contains(@alt,'" + WebUtility.HtmlEncode(title) + "')]")[pokeForm];
                                         image = img.GetAttributeValue("src", "http://images2.wikia.nocookie.net/__cb20130306053630/battlefordreamislandfanfiction/images/4/4c/Pokeball.png");
                                     }
                                     catch (Exception e)

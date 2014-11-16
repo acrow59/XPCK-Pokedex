@@ -91,34 +91,39 @@
 
             <SemanticZoom.ZoomedOutView>
                 <GridView 
+                    Margin="80,160,0,0"
                     x:Name="ZoomedOutGroupGridView"
                     ScrollViewer.IsHorizontalScrollChainingEnabled="False"
                     SelectionMode="None"
 			        IsSwipeEnabled="false" IsItemClickEnabled="True" >
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Height="250" Width="250">
-                                <Grid.RowDefinitions>
+                            <StackPanel Height="250" Width="250" >
+                                <StackPanel.Background>
+                                    <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/Logo.png"/>
+                                </StackPanel.Background>
+                                <!--<Grid.RowDefinitions>
                                     <RowDefinition Height="55"/> 
                                     <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
+                                </Grid.RowDefinitions>-->
                                 <TextBlock
                                 HorizontalAlignment="Center"
                                 Text="{Binding Group.Key}"
                                 TextTrimming="WordEllipsis"
                                 Foreground="WhiteSmoke"
+                                    Margin="0,15,0,0"
                                 FontSize="22"
                                 Style="{StaticResource BasicTextStyle}"/>
-                                <Image Source="{Binding Group[0].Image}" Grid.Row="1" />
-                            </Grid>
+                                <!--<Image Source="ms-appx:///Assets/Logo.png" Grid.Row="1" Stretch="Uniform" />-->
+                            </StackPanel>
                         </DataTemplate>
                     </GridView.ItemTemplate>
-                    <GridView.ItemsPanel>
+                    <!--<GridView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapGrid ItemWidth="250" ItemHeight="250" MaximumRowsOrColumns="2" 
                                 VerticalChildrenAlignment="Center" />
                         </ItemsPanelTemplate>
-                    </GridView.ItemsPanel>
+                    </GridView.ItemsPanel>-->
                     <GridView.ItemContainerStyle>
                         <Style TargetType="GridViewItem">
                             <Setter Property="Margin" Value="4" />

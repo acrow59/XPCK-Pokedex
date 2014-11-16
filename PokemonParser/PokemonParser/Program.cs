@@ -100,11 +100,13 @@ namespace PokemonParser
 
                                     //Gets short description
                                     var bio = roundy.NextSibling.NextSibling;
+                                    description += "<font color=\"white\">";
                                     while (bio.Name == "p")
                                     {
                                         description += bio.OuterHtml;
                                         bio = bio.NextSibling;
                                     }
+                                    description += "</font>";
 
                                     try
                                     {

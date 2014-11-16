@@ -111,7 +111,7 @@
                                 Text="{Binding Group.Key}"
                                 TextTrimming="WordEllipsis"
                                 Foreground="WhiteSmoke"
-                                    Margin="0,15,0,0"
+                                    Margin="0,25,0,0"
                                 FontSize="22"
                                 Style="{StaticResource BasicTextStyle}"/>
                                 <!--<Image Source="ms-appx:///Assets/Logo.png" Grid.Row="1" Stretch="Uniform" />-->

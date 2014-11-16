@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="XPlatformCloudKit.Win8.App">
-      <VisualElements DisplayName="XPCK Pokedex" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Example of creating a Pokedex using the XPlatformCloudKit." ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="XPCK Pokedex" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Example of creating a Pokedex using the XPlatformCloudKit." ForegroundText="light" BackgroundColor="#1d1d1d">
         <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#1D1D1D" />
         <InitialRotationPreference>

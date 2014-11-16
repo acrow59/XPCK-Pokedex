@@ -12,12 +12,15 @@
 
             <DataTemplate x:Key="GridItemTemplate">
                 <Grid HorizontalAlignment="Left" Width="Auto" Height="Auto">
-                    <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Logo.png"/>
+                        </Border.Background>
                         <Image Source="{Binding Image}" Stretch="UniformToFill" VerticalAlignment="Center"  AutomationProperties.Name="{Binding Title}"/>
                     </Border>
                     <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                        <TextBlock Text="{Binding Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextBlockStyle}" Height="60" Margin="15,0,15,0"/>
-                        <TextBlock Text="{Binding Subtitle}" Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}" FontSize="12" TextWrapping="NoWrap" Margin="15,0,15,10"/>
+                        <TextBlock Text="{Binding Title}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextBlockStyle}" Height="60" Margin="15,0,15,0"/>
+                        <TextBlock Text="{Binding Subtitle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}" FontSize="12" TextWrapping="NoWrap" Margin="15,0,15,10"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>
@@ -28,12 +31,15 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Border Background="Gray" Width="110" Height="110">
+                    <Border Width="110" Height="110">
+                        <Border.Background>
+                            <ImageBrush Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Logo.png"/>
+                        </Border.Background>
                         <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                     </Border>
                     <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10,0,0,0">
-                        <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap"/>
-                        <TextBlock Text="{Binding Subtitle}" FontSize="12" Foreground="{StaticResource ApplicationSecondaryForegroundThemeBrush}" TextWrapping="NoWrap"/>
+                        <TextBlock Text="{Binding Title}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Subtitle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" FontSize="12" Foreground="{StaticResource ApplicationSecondaryForegroundThemeBrush}" TextWrapping="NoWrap"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>

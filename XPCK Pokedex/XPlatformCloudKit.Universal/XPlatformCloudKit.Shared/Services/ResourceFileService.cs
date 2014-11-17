@@ -28,8 +28,7 @@ namespace XPlatformCloudKit.Services
             var folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
             var file = await folder.GetFileAsync(fileName);
             
-            var content = await Windows.Storage.FileIO.ReadTextAsync(file);
-            return content;
+            return await Windows.Storage.FileIO.ReadTextAsync(file);
 #endif
 
 #if DROID

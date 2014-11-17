@@ -76,8 +76,8 @@ namespace XPlatformCloudKit.Views
 
             if (!AppSettings.EnableSingleVerticalLayoutPhone81)
             {
-                titlePanel.Margin = new Thickness(0, 30, 0, 0);
-                ZoomedOutGroupGridView.Margin =  new Thickness(12);
+                titlePanel.Margin = new Thickness(0, -25, 0, 0);
+                ZoomedOutGroupGridView.Margin =  new Thickness(0);
                 ZoomedOutGroupGridView.Background = (SolidColorBrush)Application.Current.Resources["ApplicationPageBackgroundThemeBrush"];
 
             }

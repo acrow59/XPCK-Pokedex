@@ -316,12 +316,14 @@ namespace XPlatformCloudKit.Views
             +
             "<style type='text/css'>a img {border: 0;}</style>" +
             "</HEAD>" +
-            "<BODY style=\"background-color:" + bc + ";color:" + fc + ";-ms-touch-action: pan-y;" + "\">" +
+            "<BODY style=\"background-color:" + bc + ";color:" + fc + ";-ms-touch-action: manipulation;" + "\">" +
             selectedItem.Description +
             "</BODY>" +
             "</HTML>";
 
-            browser.NavigateToString(webcontent);
+            webcontent = webcontent.Replace("float:right;", "float:none");
+            webcontent = webcontent.Replace("min-width:360px", "min-width:300px");
+            browser.NavigateToString(webcontent);    
         }
 
         private bool IsYoutubeLink(string description)

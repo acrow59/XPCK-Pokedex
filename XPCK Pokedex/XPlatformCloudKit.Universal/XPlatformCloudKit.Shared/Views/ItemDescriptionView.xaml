@@ -21,9 +21,9 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.ColumnSpan="2" x:Name="ItemTitleTextblock" FontSize="26.667" TextWrapping="Wrap" FontWeight="Light" Text="{Binding Title}" Style="{StaticResource BaseTextBlockStyle}"/>
+                <TextBlock Grid.ColumnSpan="2" x:Name="ItemTitleTextblock" FontSize="26.667" TextWrapping="Wrap" FontWeight="Light" Text="{Binding Title}" Style="{StaticResource BaseTextBlockStyle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid"/>
                 <StackPanel x:Name="ItemSubtitleAndImagePanel" Grid.Row="1" Orientation="Vertical" DataContextChanged="ItemSubtitleAndImagePanel_DataContextChanged">
-                    <TextBlock FontWeight="Normal" TextWrapping="Wrap" Text="{Binding Subtitle}" Margin="2,0,0,10" Style="{StaticResource BaseTextBlockStyle}"/>
+                    <TextBlock FontWeight="Normal" TextWrapping="Wrap" Text="{Binding Subtitle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Margin="2,0,0,10" Style="{StaticResource BaseTextBlockStyle}"/>
                     <Image x:Name="image" Margin="0,20,200,47" HorizontalAlignment="Left" MaxWidth="480" MaxHeight="480" Stretch="Uniform" Source="{Binding Image}" Grid.RowSpan="1"/>
                 </StackPanel>
                 <WebView Grid.Row="1" Margin="0,30,70,47" Grid.RowSpan="2" Grid.Column="1" x:Name="webView" Loaded="WireUpWebBrowser" Grid.ColumnSpan="2" />
@@ -33,15 +33,15 @@
         <DataTemplate x:Key="FlipViewItemTemplateSnapped">
             <!--ContentPanel - place additional content here-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="36,0,26,0">
-                <Grid.RowDefinitions>
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel x:Name="ItemSubtitleAndImagePanel" Margin="0,0,0,10" DataContextChanged="ItemSubtitleAndImagePanel_DataContextChanged" >
-                    <TextBlock x:Name="ItemTitleTextblock" FontSize="26.667" TextWrapping="Wrap" FontWeight="Light" Text="{Binding Title}" Style="{StaticResource BaseTextBlockStyle}"/>
-                    <TextBlock FontWeight="Normal" TextWrapping="Wrap" Text="{Binding Subtitle}" Margin="0,0,0,10" Style="{StaticResource BaseTextBlockStyle}"/>
+                    <TextBlock x:Name="ItemTitleTextblock" FontSize="26.667" TextWrapping="Wrap" FontWeight="Light" Text="{Binding Title}" Style="{StaticResource BaseTextBlockStyle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid"/>
+                    <TextBlock FontWeight="Normal" TextWrapping="Wrap" Text="{Binding Subtitle}" Margin="0,0,0,10" Style="{StaticResource BaseTextBlockStyle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid"/>
                     <Image x:Name="image" HorizontalAlignment="Left" MaxHeight="100" MaxWidth="100"  Stretch="UniformToFill"  Source="{Binding Image}"/>
-                </StackPanel>
+                </StackPanel>-->
                 <WebView Grid.Row="1" x:Name="webView" Margin="-10,0,0,0" Loaded="WireUpWebBrowser"  />
             </Grid>
         </DataTemplate>
@@ -75,9 +75,11 @@
             <StackPanel x:Name="titlePanel" Margin="19,0,0,0" Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock x:Name="appTitle"
                        Text="{Binding ApplicationName}"
+                       FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid"
+                       Foreground="Gold"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        Typography.Capitals="SmallCaps" />
-                <TextBlock x:Name="groupTitle" x:Uid="Header" Text="{Binding SelectedGroup.Key}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                <TextBlock x:Name="groupTitle" x:Uid="Header" Text="{Binding SelectedGroup.Key}" FontSize="35" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                        IsHitTestVisible="false" TextWrapping="NoWrap" />
             </StackPanel>
         </Grid>

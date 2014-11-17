@@ -53,5 +53,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\WallpaperHorizontal.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\WallpaperVertical.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\WideLogo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\Pokemon Hollow.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\Pokemon Solid.ttf" />
   </ItemGroup>
 </Project>

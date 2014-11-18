@@ -15,7 +15,7 @@ using XPlatformCloudKit.Services;
 
 namespace XPlatformCloudKit.DataServices
 {
-    class LocalItemsFileService:IDataService
+    class LocalItemsFileService : IDataService
     {
         HttpClient httpClient = new HttpClient();
         List<Item> LocalItems;
@@ -24,18 +24,22 @@ namespace XPlatformCloudKit.DataServices
         {
             LocalItems = new List<Item>();
 
-            string localItemsXML = await ServiceLocator.ResourceFileService.ReadFileFromInstallPath("LocalItemsFile.xml");
+            string[] files = new string[] { "Generation I.xml", "Generation II.xml", "Generation III.xml", "Generation IV.xml", "Generation V.xml", "Generation VI.xml" };
 
+            foreach (string file in files)
+            {
+                string localItemsXML = await ServiceLocator.ResourceFileService.ReadFileFromInstallPath("LocalItemFiles\\"+file);
+                try
+                {
+                    GC.Collect();
+                    await Parse(localItemsXML);
+                }
+                catch
+                {
+                    ServiceLocator.MessageService.ShowErrorAsync("Error when Parsing Items from "+file, "Application Error");
+                }
+            }
 
-            try
-            {
-                await Parse(localItemsXML);
-            }
-            catch
-            {
-                ServiceLocator.MessageService.ShowErrorAsync("Error when Parsing Items from LocalItemsFile.xml", "Application Error");
-            }
-            
 
             if (!String.IsNullOrEmpty(AppSettings.RemoteItemFileService))
             {

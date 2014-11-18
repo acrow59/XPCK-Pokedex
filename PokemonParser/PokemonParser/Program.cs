@@ -31,11 +31,14 @@ namespace PokemonParser
             {
 
                 //Pass the filepath and filename to the StreamWriter Constructor
-                StreamWriter sw = new StreamWriter("C:\\Users\\Alec\\Documents\\LocalItemsFile.xml");
-                sw.Write("<items>");
+                //StreamWriter sw = new StreamWriter("C:\\Users\\Alec\\Documents\\LocalItemsFile.xml");
+                //sw.Write("<items>");
 
                 foreach (var h3 in h3s)
                 {
+                    StreamWriter sw = new StreamWriter("C:\\Users\\Alec\\Documents\\" + h3.InnerText + ".xml");
+                    sw.Write("<items>");
+
                     Console.Write("\n" + h3.InnerText + "\n");
                     var table = h3.NextSibling;
                     while (table.Name != "table")
@@ -156,7 +159,7 @@ namespace PokemonParser
                                         }
                                         else
                                         {
-                                            learnsetTable = multiforms[pokeForm*2];
+                                            learnsetTable = multiforms[pokeForm * 2];
                                         }
                                         learnsetTable.Attributes["style"].Value = learnsetTable.Attributes["style"].Value + " margin-top: 15px;";
                                         description += learnsetTable.OuterHtml;
@@ -197,11 +200,13 @@ namespace PokemonParser
                             "</item>");
                         }
                     }
+
+                    sw.Write("</items>");
+                    //Close the file
+                    sw.Close();
                 }
 
-                sw.Write("</items>");
-                //Close the file
-                sw.Close();
+
             }
             catch (Exception e)
             {

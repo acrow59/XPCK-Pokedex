@@ -10,6 +10,7 @@
   <Prerequisites>
     <OSMinVersion>6.3.1</OSMinVersion>
     <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+    <m3:MinDeviceMemory>1GB</m3:MinDeviceMemory>
   </Prerequisites>
   <Resources>
     <Resource Language="x-generate" />

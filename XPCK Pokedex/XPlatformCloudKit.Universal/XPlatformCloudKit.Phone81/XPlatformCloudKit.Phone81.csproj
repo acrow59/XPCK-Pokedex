@@ -17,6 +17,7 @@
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <AppxValidateAppxManifest>false</AppxValidateAppxManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -101,6 +102,24 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation I.xml">
+      <Link>LocalItemFiles\Generation I.xml</Link>
+    </Content>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation II.xml">
+      <Link>LocalItemFiles\Generation II.xml</Link>
+    </Content>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation III.xml">
+      <Link>LocalItemFiles\Generation III.xml</Link>
+    </Content>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation IV.xml">
+      <Link>LocalItemFiles\Generation IV.xml</Link>
+    </Content>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation V.xml">
+      <Link>LocalItemFiles\Generation V.xml</Link>
+    </Content>
+    <Content Include="..\..\XPlatformCloudKit.PCL\LocalItemFiles\Generation VI.xml">
+      <Link>LocalItemFiles\Generation VI.xml</Link>
+    </Content>
     <Content Include="..\..\XPlatformCloudKit.Win8\LocalItemsFile.xml">
       <Link>LocalItemsFile.xml</Link>
       <SubType>Designer</SubType>

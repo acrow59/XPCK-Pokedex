@@ -146,6 +146,24 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <PRIResource Include="en-US\Resources.resw" />
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation I.xml">
+      <Link>LocalItemFiles\Generation I.xml</Link>
+    </Content>
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation II.xml">
+      <Link>LocalItemFiles\Generation II.xml</Link>
+    </Content>
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation III.xml">
+      <Link>LocalItemFiles\Generation III.xml</Link>
+    </Content>
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation IV.xml">
+      <Link>LocalItemFiles\Generation IV.xml</Link>
+    </Content>
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation V.xml">
+      <Link>LocalItemFiles\Generation V.xml</Link>
+    </Content>
+    <Content Include="..\XPlatformCloudKit.PCL\LocalItemFiles\Generation VI.xml">
+      <Link>LocalItemFiles\Generation VI.xml</Link>
+    </Content>
     <Content Include="Fonts\Pokemon Hollow.ttf" />
     <Content Include="Fonts\Pokemon Solid.ttf" />
     <None Include="Microsoft.Advertising.WinRT.UI\Microsoft.Advertising.WinRT.UI.winmd" />

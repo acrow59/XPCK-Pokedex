@@ -109,7 +109,7 @@
                                 AutomationProperties.AutomationId="BackButton"
                                 AutomationProperties.ItemType="Navigation Button" />
                             <StackPanel Name="titlePanel" Grid.ColumnSpan="2" >
-                                <TextBox x:Name="SearchBox" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                                <TextBox x:Name="SearchBox" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,25,0,0"/>
                                 <TextBlock x:Name="pageTitle" x:Uid="Header" Text="{Binding ApplicationName}" Foreground="Gold" Style="{StaticResource HeaderTextBlockStyle}" FontFamily="/Fonts/Pokemon Solid.ttf#Pokemon Solid" Grid.Column="1" 
                                 VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
                             </StackPanel>

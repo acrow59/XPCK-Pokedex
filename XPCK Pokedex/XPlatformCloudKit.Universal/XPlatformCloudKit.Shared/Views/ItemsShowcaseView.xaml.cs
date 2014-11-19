@@ -76,7 +76,7 @@ namespace XPlatformCloudKit.Views
 
             if (!AppSettings.EnableSingleVerticalLayoutPhone81)
             {
-                titlePanel.Margin = new Thickness(0, -25, 0, 0);
+                pageTitle.Margin = new Thickness(0, -25, 0, 0);
                 ZoomedOutGroupGridView.Margin =  new Thickness(0);
                 ZoomedOutGroupGridView.Background = (SolidColorBrush)Application.Current.Resources["ApplicationPageBackgroundThemeBrush"];
 
@@ -306,6 +306,7 @@ namespace XPlatformCloudKit.Views
             else
             {
                 SearchBox.Visibility = Visibility.Visible;
+                pageTitle.Margin = new Thickness(0, -50, 0, 0);
                 SearchBox.Focus(Windows.UI.Xaml.FocusState.Programmatic);
             }
 #endif
@@ -335,6 +336,7 @@ namespace XPlatformCloudKit.Views
             if (SearchBox.Visibility == Visibility.Visible)
             {
                 SearchBox.Visibility = Visibility.Collapsed;
+                pageTitle.Margin = new Thickness(0, -25, 0, 0);
                 SearchBox.Text = "";
                 ((ItemsShowcaseViewModel)DataContext).ClearSearch.Execute(null);
                 e.Handled = true;

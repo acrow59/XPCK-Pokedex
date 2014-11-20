@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="60554adcrow.XPCKPokedex" Publisher="CN=8E4BB2D1-6BF1-49F7-8DFB-1B16BD27EAAB" Version="1.1.0.0" />
+  <Identity Name="60554adcrow.XPCKPokedex" Publisher="CN=8E4BB2D1-6BF1-49F7-8DFB-1B16BD27EAAB" Version="1.1.0.2" />
   <mp:PhoneIdentity PhoneProductId="3819c307-76ba-4e4f-bcda-722452554a27" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>XPCK Pokedex</DisplayName>

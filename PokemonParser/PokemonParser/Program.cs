@@ -67,7 +67,7 @@ namespace PokemonParser
                                 subtitle = td.InnerText.Replace("\n", "").Trim();
                                 Console.Write("Dex #: " + td.InnerText);
                             }
-                            if (count == 3 & subtitle == "#422")
+                            if (count == 3)
                             {
                                 title = td.InnerText.Replace("\n", "").Trim();
                                 if (subtitle == prevpoke) pokeForm++;
@@ -173,11 +173,16 @@ namespace PokemonParser
                                     try
                                     {
                                         //var img = roundy.SelectNodes("//table[@class='roundy']//img[contains(@alt,'" + WebUtility.HtmlEncode(title) + "')]")[pokeForm];
-                                        var imgs = roundy.SelectNodes("//table[@class='roundy']//img[contains(@alt,'" + WebUtility.HtmlEncode(title) + "') or contains(@alt,'" + title + "')]");
+                                        var imgs = roundy.SelectNodes("//table[@class='roundy']//img[contains(@alt,'" + WebUtility.HtmlEncode(title) + "') or contains(@alt,'" + title.Replace("'", "") + "')]");
                                         if (imgs.Count > 1)
-                                            image = imgs[pokeForm].GetAttributeValue("src", "http://images2.wikia.nocookie.net/__cb20130306053630/battlefordreamislandfanfiction/images/4/4c/Pokeball.png");
+                                        {
+                                            if (subtitle != "#351")
+                                                image = imgs[pokeForm].GetAttributeValue("src", "").Replace("110px", "250px");
+                                            else
+                                                image = imgs[pokeForm].GetAttributeValue("src", "");
+                                        }
                                         else
-                                            image = imgs[0].GetAttributeValue("src", "http://images2.wikia.nocookie.net/__cb20130306053630/battlefordreamislandfanfiction/images/4/4c/Pokeball.png");
+                                            image = imgs[0].GetAttributeValue("src", "");
                                     }
                                     catch (Exception e)
                                     {
@@ -193,6 +198,8 @@ namespace PokemonParser
 
                             count++;
                         }
+
+
                         if (title != null)
                         {
                             sw.Write("<item>\n" +
